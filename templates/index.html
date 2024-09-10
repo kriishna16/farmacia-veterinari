@@ -13,10 +13,11 @@
     <nav>
         <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
         <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#categories">Categorías</a></li>
-            <li><a href="#about">Acerca de</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
+            <li><a href="#categories">Caballos</a></li>
+            <li><a href="#about">Herraje </a></li>
+            <li><a href="#contact"> Corrales</a></li>
+            <li><a href="#contact">Otros </a></li>
         </ul>
     </nav>
 
@@ -27,26 +28,34 @@
             <img src="{{ url_for('static', filename='img/slide2.png') }}" alt="Imagen 2">
             <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3">
         </div>
-        <button class="prev">&#10094;</button>
+        <button class="prev">&#10094;</button>  
         <button class="next">&#10095;</button>
     </div>
 
     <!-- Categorías -->
     <section id="categories" class="categories">
         <div class="category">
-            <img src="https://via.placeholder.com/200x200?text=Categoría+1" alt="Categoría 1">
-            <h3>Categoría 1</h3>
-            <p>Descripción de la categoría 1.</p>
+            <img src="{{ url_for('static', filename='img/categoria1.png') }}" alt="Categoría 1">
+            <h3>Todo para tu caballo</h3>
+            <p>Descripción de la categoría 2.</p>
+            
+            
         </div>
         <div class="category">
-            <img src="https://via.placeholder.com/200x200?text=Categoría+2" alt="Categoría 2">
-            <h3>Categoría 2</h3>
+            <img src="{{ url_for('static', filename='img/categoria2.png') }}" alt="Categoría 2">
+            <h3>Herramientas de herraje </h3>
             <p>Descripción de la categoría 2.</p>
         </div>
         <div class="category">
-            <img src="https://via.placeholder.com/200x200?text=Categoría+3" alt="Categoría 3">
-            <h3>Categoría 3</h3>
+            <img src="{{ url_for('static', filename='img/categoria3.png') }}" alt="Categoría 3">
+            <h3>Medicina veterinaria </h3>
             <p>Descripción de la categoría 3.</p>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/categoria4.png') }}" alt="Categoría 4 ">
+            <h3>Accesorio para jinete </h3>
+            <p>Descripción de la categoría 4.</p>
         </div>
     </section>
 

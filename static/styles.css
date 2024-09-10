@@ -17,7 +17,7 @@ nav {
 }
 
 .logo{
-    width: 70px;
+    width: 90px;
 
 }
 nav ul {
@@ -105,3 +105,27 @@ button {
 .category p {
     color: #555;
 }
+
+
+/* Estilo para el botón */
+button {
+    background-color: #9b6d31; /* Color de fondo */
+    color: #fff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para el color y el tamaño */
+}
+
+/* Estilo para el botón al pasar el ratón sobre él */
+button:hover {
+    background-color: #b38900; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/* Estilo para el botón al hacer clic en él */
+button:active {
+    transform: scale(0.98); /* Efecto de reducción para simular un clic */
+}
+
