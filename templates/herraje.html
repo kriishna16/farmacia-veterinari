@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
+        <ul>
+            <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
+            <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
+            <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
+            <li><a href="#contact"> Corrales</a></li>
+            <li><a href="#contact">Otros </a></li>
+        </ul>
+    </nav>
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr1.jpg') }}" alt="Categoría 1">
+            <h3>Clavo MUSTAD CH4 X 250</h3>
+            <p>CLAVO MUSTAD CH4 x 250 PARA 
+                HERRADURA DE FIERRO
+                MEDIDA: 45 mm.</p>
+            <h2>$20.000</h2>
+            <button>añadir al carrito </button>
+
+
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr2.gif') }}" alt="Categoría 2">
+            <h3>Coleto Spartacus </h3>
+            <p>Chaparrera confeccionada en cuero reforzado con parches en la entrepierna
+            Velcro ajustable en piernas y cintura con hebilla de metal
+            Posee un imán en la pierna izquierda para sostén de clavos mientras se trabaja
+            Presenta dos bolsillos portaherramientas Producto Premium cómodo y resistente </p>
+            <h2>$115.000</h2>
+            <button>añadir al carrito </button>
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr3.jpg') }}" alt="Categoría 3">
+            <h3>Cuchillo despalmador</h3>
+            <p>Cuchillo despalmador  Mora ancho izquierdo </p>
+            <h2>$30.000</h2>
+            <button>Añadir al carrito </button>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr4.jpg') }}" alt="Categoría 4 ">
+            <h3>Escofina Bellota </h3>
+            <p>Escofina Bellota Razor Plus 14″ Consta de dos caras de limas 
+                que permiten diferentes tipos de trabajo, 
+                brindando flexibilidad y eficiencia al usuario.</p>
+            <h2>$37.000</h2>
+            <button>Añadir al carrito </button>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr5.jpg') }}" alt="Categoría 4 ">
+            <h3> Herradura N4</h3>
+            <p>Juego de herradura nro.4 fierro Phinno</p>
+            <h2>$5.500</h2>
+            <button>Añadir al carrito </button>
+        </div>
+    </section>
+
+
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr6.jpg') }}" alt="Categoría  ">
+            <h3>Herradura N6</h3>
+            <p> Juego de herradura nro. 6 fierro Phinno</p>
+            <h2>$5.800</h2>
+
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/herr7.jpg') }}" alt="Categoría  ">
+            <h3>Kit Herramientas </h3>
+            <p> Kit Herramientas de Herraje contiene 9 productos  NORDIC U.S.A</p>
+            <h2>$44.000</h2>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/vet7.jpg') }}" alt="Categoría  ">
+            <h3>Biopower 30 gr</h3>
+            <p>Biopower® Equino se indica en potrillos desde el nacimiento, en el destete y en otras condiciones de
+                estrés. Usar en caballos adultos durante el transporte, en períodos de estrés asociados al training y
+                competencias</p>
+            <h2>$9.000</h2>
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/vet8.jpg') }}" alt="Categoría  ">
+            <h3>Conquer liquido</h3>
+            <p>Conquer® líquido se ha desarrollado específicamente para ayudar a mantener la salud de las articulaciones
+                de su animal. HA es seguro, no tóxico y un glucosaminoglucano de origen natural con su mayor
+                concentración se encuentra en el tejido conectivo todos los vertebrados y de líquido de la articulación.
+            </p>
+            <h2>$61.700</h2>
+        </div>
+        <div class="category">
+        <img src="{{ url_for('static', filename='img/vet9.jpg') }}" alt="Categoría  ">
+        <h3>Colimic</h3>
+        <p>Antiespasmódico, relajante de la musculatura 
+        lisa en estados de cólicos gastrointestinales y como coadyuvante en diarreas y vómitos.
+        </p>
+        <h2>$10.500</h2>
+    </div>
+
+    </section>
+</body>
+
+</html>

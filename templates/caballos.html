@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
+        <ul>
+            <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
+            <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
+            <li><a href="#about">Herraje </a></li>
+            <li><a href="#contact"> Corrales</a></li>
+            <li><a href="#contact">Otros </a></li>
+        </ul>
+    </nav>
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab1.jpg') }}" alt="Categoría 1">
+            <h3> Performance Sweet Feed (25 kg)</h3>
+            <p>Indicado para caballos deportistas de alto rendimiento. Aporta los nutrientes que 
+                necesita un caballo para desarrollar todo su potencial como atleta, 
+                asegurando su óptima nutrición.</p>
+            <h2>$16.900</h2>
+            <button>añadir al carrito </button>
+
+
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab2.jpg') }}" alt="Categoría 2">
+            <h3>Performance Training (25kg)</h3>
+                <p>Indicado para caballos sometidos a exigencias físicas, puede ser usado en caballos con bajas,medias y altas cargas de trabajo, solo variando la dosificación.
+                 Aporta los nutrientes que necesitaun 
+                 caballo para desarrollar todo su potencial como atleta, asegurando su óptima nutrición. </p>
+            <h2>$17.500</h2>
+            <button>añadir al carrito </button>
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab3.jpg') }}" alt="Categoría 3">
+            <h3>Cabezada</h3>
+            <p>Cabezada con riendas de nylon artesanal (rojo)</p>
+            <h2>$48.000 </h2>
+            <button>Añadir al carrito </button>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab4.jpg') }}" alt="Categoría 4 ">
+            <h3>Carpa </h3>
+            <p>Carpa de arpillera con polar</p>
+            <h2>$35.000</h2>
+            <button>Añadir al carrito </button>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab5.jpg') }}" alt="Categoría 4 ">
+            <h3>Jaquimas/h3>
+            <p>Jáquima nylon roja talla M </p>
+            <h2>$20.000</h2>
+            <button>Añadir al carrito </button>
+        </div>
+    </section>
+
+
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab6.jpg') }}" alt="Categoría  ">
+            <h3>Vendas</h3>
+            <p> Juego de 4 vendas polo roma color roja.</p>
+            <h2>$23.364</h2>
+
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab7.jpg') }}" alt="Categoría  ">
+            <h3>Rasqueta </h3>
+            <p> Rasqueta de lata .</p>
+            <h2>$4.500</h2>
+        </div>
+
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab8.jpg') }}" alt="Categoría  ">
+            <h3>Set limpieza</h3>
+            <p>Set limpieza Roma en caja de lujo color purpura 7 piezas</p>
+            <h2>$32.922</h2>
+        </div>
+        <div class="category">
+            <img src="{{ url_for('static', filename='img/cab9.jpg') }}" alt="Categoría  ">
+            <h3>Protección de nudo Norton para caballo</h3>
+            <p>Los protectores salto Norton llevan en el interior una capa de borreguillo sintético. 
+            Además de la suavidad del borreguillo los protectores también destacan por su forma anatómica. 
+            Se ajustan a todos los caballos de forma muy correcta.</p>
+            <h2>$25.000</h2>
+        </div>
+        <div class="category">
+        <img src="{{ url_for('static', filename='img/cab10.jpg') }}" alt="Categoría  ">
+        <h3>Rack porta montura.</h3>
+        <p>Rack porta montura con capacidad para 3 monturas</p>
+        <h2>$140.000</h2>
+    </div>
+
+    </section>
+</body>
+
+</html>
