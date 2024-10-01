@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio sesion </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+            </a>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
+            <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
+            <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
+            <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
+            <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
+        </ul>
+    </nav>
+<body>
+    <div class="login-container">
+        <h2 class="iii">Iniciar sesión</h2>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        
+        <form method="post" action="/login">
+            <input class="aa" name="Gmail" placeholder="correo" required>
+            <input class="aa" name="username" placeholder="Usuario" required>
+            <input class="aa" name="password" placeholder="Contraseña" required>
+            <br>
+            <button class="bbb">registrate</button>
+        </form>
+    </div>
+</body>
+</html>

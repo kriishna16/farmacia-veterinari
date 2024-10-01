@@ -4,11 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url(img/caballo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
 }
 
 /* Barra de navegación */
 nav {
-    background-color: #333;
+    background-color: #3333337e;
     color: #fff;
     padding: 1rem;
     display: flex;
@@ -40,21 +45,50 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Carrusel */
-.carousel {
+.slider-container {
     position: relative;
-    width: 1900px;
+    width: 80%;
+    margin: auto;
     overflow: hidden;
-    margin: 0 auto;
+    padding-top: 50px;
 }
-.carousel-images {
+
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-.carousel-images img {
-    width: 1000px;
-    height: 400px;
-    object-fit: cover;
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 80%;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+
+
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 button {
@@ -77,25 +111,43 @@ button {
     right: 10px;
 }
 
+
+
+.hola{
+    display: flex;
+    justify-content: center;
+    }
+
+
 /* Categorías */
 .categories {
     display: flex;
-    justify-content: space-around;
     padding: 2rem;
+    height: 550px;
+    gap: 53px;
+    justify-content: center;
+
 }
 
+
+
 .category {
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: #ffffff4d;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 1rem;
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
+
+
 .category img {
-    width: 100%;
-    border-radius: 8px;
+    height: 60%;
+    border-radius: 20px;
 }
 
 .category h3 {
@@ -103,13 +155,13 @@ button {
 }
 
 .category p {
-    color: #555;
+    color: black;
 }
 
 
 /* Estilo para el botón */
 button {
-    background-color: #9b6d31; /* Color de fondo */
+    background-color: #9b6d31a4; /* Color de fondo */
     color: #fff; /* Color del texto blanco */
     border: none; /* Sin borde */
     border-radius: 4px; /* Bordes redondeados */
@@ -121,11 +173,60 @@ button {
 
 /* Estilo para el botón al pasar el ratón sobre él */
 button:hover {
-    background-color: #b38900; /* Color de fondo más oscuro al pasar el ratón */
+    background-color: #9b6d31; /* Color de fondo más oscuro al pasar el ratón */
 }
 
-/* Estilo para el botón al hacer clic en él */
-button:active {
-    transform: scale(0.98); /* Efecto de reducción para simular un clic */
+
+
+
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.iii {
+    margin-bottom: 20px;
+}
+
+.aa {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.bb {
+    width: 40%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.flashes {
+    list-style-type: none;
+    color: red;
+}
+.bbb {
+    width: 40%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

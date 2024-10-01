@@ -11,52 +11,59 @@
 <body>
     <!-- Barra de navegación -->
     <nav>
-        <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+            </a>
+        </div>
         <ul>
             <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
             <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
             <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
-            <li><a href="#contact">Otros </a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
+            <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
         </ul>
     </nav>
 
-    <!-- Carrusel -->
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="{{ url_for('static', filename='img/slide1.png') }}" alt="img1">
-            <img src="{{ url_for('static', filename='img/slide2.png') }}" alt="Imagen 2">
-            <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3">
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><a href=""><img src="{{ url_for('static', filename='img/slide1.png') }}" alt="Image 1"></a></div>
+            <div class="slide"><a href=""><img src="{{ url_for('static', filename='img/slide2.png') }}" alt="Image 2"></a></div>
+            <div class="slide"><a href=""><img src="{{ url_for('static', filename='img/slide3.png') }}" alt="Image 3"></a></div>
         </div>
-        <button class="prev">&#10094;</button>  
-        <button class="next">&#10095;</button>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
     </div>
 
     <!-- Categorías -->
+     <div class="hola">
+     <h1>Secciones</h1>
+     </div>
     <section id="categories" class="categories">
-        <div class="category">
+        <div class="category"><a href="{{ url_for('caballos') }}">
             <img src="{{ url_for('static', filename='img/categoria1.png') }}" alt="Categoría 1">
             <h3>Todo para tu caballo</h3>
             <p>Descripción de la categoría 2.</p>
             
-            
+        </a>
         </div>
-        <div class="category">
+        <div class="category"><a href="{{ url_for('herraje') }}">
             <img src="{{ url_for('static', filename='img/categoria2.png') }}" alt="Categoría 2">
             <h3>Herramientas de herraje </h3>
             <p>Descripción de la categoría 2.</p>
-        </div>
-        <div class="category">
+        </div></a>
+        <div class="category"><a href="{{ url_for('veterinaria') }}">
             <img src="{{ url_for('static', filename='img/categoria3.png') }}" alt="Categoría 3">
             <h3>Medicina veterinaria </h3>
             <p>Descripción de la categoría 3.</p>
-        </div>
+        </div></a>
 
-        <div class="category">
+        <div class="category"><a href="{{ url_for('corrales') }}">
             <img src="{{ url_for('static', filename='img/categoria4.png') }}" alt="Categoría 4 ">
             <h3>Accesorio para jinete </h3>
             <p>Descripción de la categoría 4.</p>
-        </div>
+        </div></a>
     </section>
 
     <!-- Script -->

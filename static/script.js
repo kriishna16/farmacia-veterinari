@@ -1,23 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const imagesContainer = document.querySelector('.carousel-images');
-    const images = document.querySelectorAll('.carousel-images img');
-    
-    let index = 0;
-    
-    function updateCarousel() {
-        const offset = -index * 300; // Ancho en porcentaje
-        imagesContainer.style.transform = `translateX(${offset}%)`;
+
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = index;
     }
-    
-    prevButton.addEventListener('click', () => {
-        index = (index > 0) ? index - 1 : images.length - 1;
-        updateCarousel();
-    });
-    
-    nextButton.addEventListener('click', () => {
-        index = (index < images.length - 1) ? index + 1 : 0;
-        updateCarousel();
-    });
+    slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+}
+
+prevButton.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
 });
+
+nextButton.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+});
+
+showSlide(currentIndex);

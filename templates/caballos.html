@@ -10,13 +10,19 @@
 
 <body>
     <nav>
-        <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+            </a>
+        </div>
+        
         <ul>
             <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
             <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
             <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
-            <li><a href="#contact">Otros </a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
+            <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
         </ul>
     </nav>
 

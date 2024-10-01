@@ -10,13 +10,18 @@
 
 <body>
     <nav>
-        <div><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""></div>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+            </a>
+        </div>
         <ul>
             <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
             <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
             <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
-            <li><a href="#contact">Otros </a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
+            <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
         </ul>
     </nav>
 
@@ -24,14 +29,12 @@
         <div class="category">
             <img src="{{ url_for('static', filename='img/vet1.jpg') }}" alt="Categoría 1">
             <h3>ACTIGOR 100 ml</h3>
-            <p>Indicado en deficiencias de Fósforo y oligoelementos en la dieta, su uso permite equilibrar las
-                exigencias de la preñez, crecimiento, reproducción, lactancia, ejercicio intenso, convalecencia y para
-                mejorar el aspecto (pelaje).</p>
+            <p>/e exhibición, las personas continúan descubriendo esta solución para el cuidado del cabello
+                para sí mismas.</p>
             <h2>$28.000</h2>
             <button>añadir al carrito </button>
-
-
         </div>
+
         <div class="category">
             <img src="{{ url_for('static', filename='img/vet2.png') }}" alt="Categoría 2">
             <h3>Acondicionador Original 355 ml Mane´n Tail </h3>
@@ -63,7 +66,7 @@
         </div>
 
         <div class="category">
-            <img src="{{ url_for('static', filename='img/vet.jpg') }}" alt="Categoría 4 ">
+            <img src="{{ url_for('static', filename='img/vet.jpg') }}" alt="Categoría 5 ">
             <h3>AIR PROFUNDLY</h3>
             <p>Ayuda a despejar las vías respiratorias favoreciendo una mayor capacidad aeróbica especialmente indicado
                 para caballos en training o sometidos a una gran exigencia física. Indicado para animales en
@@ -77,16 +80,17 @@
 
     <section id="categories" class="categories">
         <div class="category">
-            <img src="{{ url_for('static', filename='img/vet5.jpg') }}" alt="Categoría  ">
+            <img src="{{ url_for('static', filename='img/vet5.jpg') }}" alt="Categoría 6  ">
             <h3>Ajo en polvo (Garlic) 1 kilo</h3>
             <p> El AJO EN POLVO es un suplemento para equinos conocido por sus muchos beneficios para la salud. Además,
                 se puede suplementar durante los meses de verano para reducir el número de moscas en los establos y
                 durante el ejercicio.</p>
             <h2>$23.000</h2>
+            
 
         </div>
         <div class="category">
-            <img src="{{ url_for('static', filename='img/vet6.jpg') }}" alt="Categoría  ">
+            <img src="{{ url_for('static', filename='img/vet6.jpg') }}" alt="Categoría 7 ">
             <h3>Iron Power 1.9 lt. (Finish Line)</h3>
             <p> suplemento vitamínico líquido con alto contenido de hierro y alto contenido de complejo B utilizado como
                 ayuda para prevenir la anemia por deficiencia de hierro, que causa letargo y debilidad que conduce a un
@@ -95,7 +99,7 @@
         </div>
 
         <div class="category">
-            <img src="{{ url_for('static', filename='img/vet7.jpg') }}" alt="Categoría  ">
+            <img src="{{ url_for('static', filename='img/vet7.jpg') }}" alt="Categoría 8 ">
             <h3>Biopower 30 gr</h3>
             <p>Biopower® Equino se indica en potrillos desde el nacimiento, en el destete y en otras condiciones de
                 estrés. Usar en caballos adultos durante el transporte, en períodos de estrés asociados al training y
@@ -103,7 +107,7 @@
             <h2>$9.000</h2>
         </div>
         <div class="category">
-            <img src="{{ url_for('static', filename='img/vet8.jpg') }}" alt="Categoría  ">
+            <img src="{{ url_for('static', filename='img/vet8.jpg') }}" alt="Categoría 9 ">
             <h3>Conquer liquido</h3>
             <p>Conquer® líquido se ha desarrollado específicamente para ayudar a mantener la salud de las articulaciones
                 de su animal. HA es seguro, no tóxico y un glucosaminoglucano de origen natural con su mayor
@@ -112,7 +116,7 @@
             <h2>$61.700</h2>
         </div>
         <div class="category">
-        <img src="{{ url_for('static', filename='img/vet9.jpg') }}" alt="Categoría  ">
+        <img src="{{ url_for('static', filename='img/vet9.jpg') }}" alt="Categoría 10 ">
         <h3>Colimic</h3>
         <p>Antiespasmódico, relajante de la musculatura 
         lisa en estados de cólicos gastrointestinales y como coadyuvante en diarreas y vómitos.
