@@ -21,6 +21,18 @@ def herraje():
 @app.route('/corrales')
 def corrales():
     return render_template('corrales.html')
+
+@app.route('/inicio')
+def inicio():
+    return render_template('inicio.html')
+
+
+@app.route('/registrate')
+def registrate():
+    return render_template('registrate.html')
+
+
+
 if __name__ == '__main__':
     
     app.run(debug=True)
