@@ -25,26 +25,71 @@
             <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
         </ul>
     </nav>
-<body>
-    <div class="login-container">
-        <h2 class="iii">Iniciar sesión</h2>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <ul class="flashes">
-              {% for message in messages %}
-                <li>{{ message }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
-        
-        <form method="post" action="/login">
-            <input class="aa" name="Gmail" placeholder="correo" required>
-            <input class="aa" name="username" placeholder="Usuario" required>
-            <input class="aa" name="password" placeholder="Contraseña" required>
-            <br>
-            <button class="bbb">registrate</button>
+    <div id="registro">
+        <h1>Registro de Usuario</h1>
+        <form id="formulario" action="/registro" method="post">
+            <input type=" text" id="email" placeholder="Email" name="email">
+            <input type="text" id="nombre" placeholder="Nombre" name="name">
+            <input type="text" id="apellido" placeholder="Apellido" name="lastname">
+            <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena">
+            <button type="submit">Registrarse</button>
         </form>
     </div>
+
+
+
 </body>
+<style>
+/* styles.css */
+
+form {
+    
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 90px;
+    border: 1px solid #0f0f0f;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    width: 250PX;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 195PX;
+    margin-left: 80PX;
+}
+
+h1{
+    margin-top: 30PX;
+    margin-left: 500PX;
+}
+</style>
+    <!-- <script>
+        const formulario = document.getElementById('formulario');
+        const nombreInput = document.getElementById('nombre');
+        const contrasenaInput = document.getElementById('contrasena');
+
+        formulario.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombreUsuario = nombreInput.value;
+
+            // Guardar en localStorage
+            localStorage.setItem('nombreUsuario', nombreUsuario);
+
+            // Redirigir a la página principal
+            window.location.href = 'index.html';
+        });
+    </script> -->
 </html>

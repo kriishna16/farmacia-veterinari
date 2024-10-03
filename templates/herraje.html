@@ -20,7 +20,7 @@
             <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
             <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
-            <li><a href="#contact">Registrate </a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
             <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
         </ul>
     </nav>
@@ -50,7 +50,8 @@
         <div class="category">
             <img src="{{ url_for('static', filename='img/herr3.jpg') }}" alt="Categoría 3">
             <h3>Cuchillo despalmador</h3>
-            <p>Cuchillo despalmador  Mora ancho izquierdo </p>
+            <p>Cuchillo despalmador Mora ancho izquierdo
+                 </p>
             <h2>$30.000</h2>
             <button>Añadir al carrito </button>
         </div>

@@ -181,7 +181,7 @@ button:hover {
 
 
 .login-container {
-    background: white;
+    background:(192, 111, 6, 0.473);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -189,14 +189,17 @@ button:hover {
 
 .iii {
     margin-bottom: 20px;
+    margin-top: 30PX;
+    margin-left: 500PX;
 }
 
 .aa {
     display: block;
     width: 40%;
     padding: 10px;
+    margin-left: 300PX;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #050505;
     border-radius: 4px;
 }
 
@@ -208,6 +211,8 @@ button:hover {
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 20PX;
+    margin-left: 300PX;
 }
 
 
@@ -230,3 +235,23 @@ a{
     text-decoration: none;
     color: black;
 }
+
+
+.rienda{
+    top: 20px;
+    height: 900px;
+}
+.btn2{
+    margin-top:30%;
+    margin-left: 19PX;
+}
+
+.btn3{
+    margin-top:75%;
+    margin-left: 19PX;   
+}
+
+
+
+
+

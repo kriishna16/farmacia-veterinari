@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <div id="productos">
+        <h2>Productos</h2>
+        <ul>
+            {% for producto in productos %}
+            <li>
+                {{ producto.nombre }} - ${{ producto.precio }}
+                <button onclick="agregarAlCarrito({{ producto.id }})">Agregar al carrito</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <script>
+        let carrito = [];
+        let total = 0;
+
+        function agregarAlCarrito(id) {
+            fetch(`/producto/${id}`)
+                .then(response => response.json())
+                .then(producto => {
+                    carrito.push(producto);
+                    total += producto.precio;
+                    actualizarCarrito();
+                });
+        }
+
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById('lista-carrito');
+            listaCarrito.innerHTML = '';
+            carrito.forEach(producto => {
+                const li = document.createElement('li');
+                li.textContent = `${producto.nombre} - $${producto.precio}`;
+                listaCarrito.appendChild(li);
+            });
+            document.getElementById('total').textContent = total;
+        }
+
+        function finalizarCompra() {
+            alert('Compra finalizada');
+            carrito = [];
+            total = 0;
+            actualizarCarrito();
+        }
+    </script>
+</body>
+</html>
