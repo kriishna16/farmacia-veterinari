@@ -1,62 +1,217 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vet</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Carrito de Compras</title>
 </head>
+
 <body>
-    <h1>Carrito de Compras</h1>
-    <div id="productos">
-        <h2>Productos</h2>
+    <nav>
+        <div>
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+            </a>
+        </div>
         <ul>
-            {% for producto in productos %}
-            <li>
-                {{ producto.nombre }} - ${{ producto.precio }}
-                <button onclick="agregarAlCarrito({{ producto.id }})">Agregar al carrito</button>
-            </li>
-            {% endfor %}
+            <li><a href="{{ url_for('veterinaria') }}">Veterinaria</a></li>
+            <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
+            <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
+            <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
+            <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
+            <li><a href="{{ url_for('carrito') }}">Carrito  </a></li>
         </ul>
+    </nav>
+    <div class="cart-container">
+        <h1>Carrito de compras </h1>
+        <div class="cart-header">
+            <div class="cart-item-title">Producto</div>
+            <div class="cart-item-quantity">Cantidad</div>
+            <div class="cart-item-price">Precio</div>
+            <div class="cart-item-total">Total</div>
+        </div>
+
+        <div class="cart-items"></div>
+            {% for element in carrito_elements %}
+
+        
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <img src="{{ url_for('static', filename=element.product.imagen) }}" alt="imagen producto " class="cart-item-img">
+                    <div class="cart-item-name">{{element.product.nombre}}</div>
+                </div>
+                <div class="cart-item-quantity">
+                    <input type="number" value="{{element.cantidad}}" min="1" max="10">
+                </div>
+                <div class="cart-item-price">${{ "{:,.0f}".format(element.product.precio)}}</div>
+                <div class="cart-item-total">${{ "{:,.0f}".format(element.product.precio * element.cantidad  )}}</div>
+                <form action="/shopping_cart/delete" method="post">
+                    <input type="hidden" name="producto_id" value="{{element.proucto_id}}">
+                    <div class="cart-item-remove"><button type="submit">Borrar</button></div>
+                </form>
+            </div>
+
+        {% endfor %}
+
+        
+
+            
+
+        </div>
+
+            
+            </div>
+          
+        </div>
     </div>
-    <div id="carrito">
-        <h2>Carrito de Compras</h2>
-        <ul id="lista-carrito"></ul>
-        <p>Total: $<span id="total">0</span></p>
-        <button onclick="finalizarCompra()">Finalizar Compra</button>
-    </div>
-
-    <script>
-        let carrito = [];
-        let total = 0;
-
-        function agregarAlCarrito(id) {
-            fetch(`/producto/${id}`)
-                .then(response => response.json())
-                .then(producto => {
-                    carrito.push(producto);
-                    total += producto.precio;
-                    actualizarCarrito();
-                });
-        }
-
-        function actualizarCarrito() {
-            const listaCarrito = document.getElementById('lista-carrito');
-            listaCarrito.innerHTML = '';
-            carrito.forEach(producto => {
-                const li = document.createElement('li');
-                li.textContent = `${producto.nombre} - $${producto.precio}`;
-                listaCarrito.appendChild(li);
-            });
-            document.getElementById('total').textContent = total;
-        }
-
-        function finalizarCompra() {
-            alert('Compra finalizada');
-            carrito = [];
-            total = 0;
-            actualizarCarrito();
-        }
-    </script>
 </body>
 </html>
+
+ <style>
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #6e4a07ab;
+    background-image: url(img/caballo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.cart-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    padding: 20px;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.cart-item-title, 
+.cart-item-quantity, 
+.cart-item-price, 
+.cart-item-total {
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-name {
+    margin-left: 10px;
+    color: #333;
+}
+
+.cart-item-quantity input {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.cart-item-price, 
+.cart-item-total {
+    text-align: center;
+    color: #333;
+}
+
+.cart-item-remove button {
+    background-color: #ff5a5f;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cart-item-remove button:hover {
+    background-color: #ff2a2f;
+}
+
+.cart-summary {
+    padding: 10px 0;
+    border-top: 2px solid #ccc;
+    text-align: right;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.summary-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.checkout-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20%;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+ </style>

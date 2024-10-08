@@ -22,97 +22,28 @@
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
             <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
             <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
+            <li><a href="{{ url_for('carrito') }}">Carrito  </a></li>
         </ul>
     </nav>
 
-    <section id="categories" class="categories">
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr1.jpg') }}" alt="Categoría 1">
-            <h3>Clavo MUSTAD CH4 X 250</h3>
-            <p>CLAVO MUSTAD CH4 x 250 PARA 
-                HERRADURA DE FIERRO
-                MEDIDA: 45 mm.</p>
-            <h2>$20.000</h2>
-            <button>añadir al carrito </button>
-
-
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr2.gif') }}" alt="Categoría 2">
-            <h3>Coleto Spartacus </h3>
-            <p>Chaparrera confeccionada en cuero reforzado con parches en la entrepierna
-            Velcro ajustable en piernas y cintura con hebilla de metal
-            Posee un imán en la pierna izquierda para sostén de clavos mientras se trabaja
-            Presenta dos bolsillos portaherramientas Producto Premium cómodo y resistente </p>
-            <h2>$115.000</h2>
-            <button>añadir al carrito </button>
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr3.jpg') }}" alt="Categoría 3">
-            <h3>Cuchillo despalmador</h3>
-            <p>Cuchillo despalmador Mora ancho izquierdo
-                 </p>
-            <h2>$30.000</h2>
-            <button>Añadir al carrito </button>
-        </div>
-
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr4.jpg') }}" alt="Categoría 4 ">
-            <h3>Escofina Bellota </h3>
-            <p>Escofina Bellota Razor Plus 14″ Consta de dos caras de limas 
-                que permiten diferentes tipos de trabajo, 
-                brindando flexibilidad y eficiencia al usuario.</p>
-            <h2>$37.000</h2>
-            <button>Añadir al carrito </button>
-        </div>
-
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr5.jpg') }}" alt="Categoría 4 ">
-            <h3> Herradura N4</h3>
-            <p>Juego de herradura nro.4 fierro Phinno</p>
-            <h2>$5.500</h2>
-            <button>Añadir al carrito </button>
-        </div>
-    </section>
-
-
 
     <section id="categories" class="categories">
+        {% for producto in productos %}
         <div class="category">
-            <img src="{{ url_for('static', filename='img/herr6.jpg') }}" alt="Categoría  ">
-            <h3>Herradura N6</h3>
-            <p> Juego de herradura nro. 6 fierro Phinno</p>
-            <h2>$5.800</h2>
+            <img src="{{ url_for('static', filename=producto.imagen) }}" alt="Categoría 3">
+            <h3>{{producto.nombre}}</h3>
+            <p> {{producto.descripcion}}</p>
+            <h2>${{ "{:,.0f}".format(producto.precio)}}</h2>
+            <form action="/shopping_cart/add/" method="post">
+                <input type="hidden" name="prod_id" value="{{producto.id}}">
+                <button class="btn2">añadir al carrito </button>
+            </form>
+        </div>
+    {% endfor %}
+
+</section>
 
         </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr7.jpg') }}" alt="Categoría  ">
-            <h3>Kit Herramientas </h3>
-            <p> Kit Herramientas de Herraje contiene 9 productos  NORDIC U.S.A</p>
-            <h2>$44.000</h2>
-        </div>
-
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr8.jpg') }}" alt="Categoría  ">
-            <h3>Corta casco Diamond 12″</h3>
-            <p></p>
-            <h2>$119.000</h2>
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/herr9.jpg') }}" alt="Categoría  ">
-            <h3>PLANTILLA CUSHION FROG </h3>
-            <p>PLANTILLA CUSHION FROG
-                MATERIAL: POLIURETANO
-            </p>
-            <h2>$13.700</h2>
-        </div>
-        <div class="category">
-        <img src="{{ url_for('static', filename='img/herr10.jpg') }}" alt="Categoría  ">
-        <h3>Martillo buffalo</h3>
-        <p>
-        </p>
-        <h2>$32.500</h2>
-    </div>
 
     </section>
 </body>

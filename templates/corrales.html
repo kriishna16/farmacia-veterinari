@@ -20,95 +20,31 @@
             <li><a href="{{ url_for('caballos') }}">Caballos</a></li>
             <li><a href="{{ url_for('herraje') }}">Herraje </a></li>
             <li><a href="{{ url_for('corrales') }}"> Corrales</a></li>
-            <li><a href="#contact">Registrate </a></li>
+            <li><a href="{{ url_for('registrate') }}">Registrate </a></li>
             <li><a href="{{ url_for('inicio') }}">Inicia sesion  </a></li>
+            <li><a href="{{ url_for('carrito') }}">Carrito  </a></li>
         </ul>
     </nav>
 
-    <section id="categories" class="categories">
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr1.jpg') }}" alt="Categoría 1">
-            <h3>Balde de caucho</h3> 
-            <p>Balde de caucho, parte trasera recta.
-                Capacidad: 17 Lts.</p>
-            <h2>$22.000</h2>
-            <button>añadir al carrito </button>
-
-
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr2.jpg') }}" alt="Categoría 2">
-            <h3>Bebedero con flotador </h3>
-            <p>Bebedero con flotador de metal 
-                <h2>$85.0000</h2>
-            <button>añadir al carrito </button>
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr3.jpg') }}" alt="Categoría 3">
-            <h3>Botiquín 85 piezas</h3>
-            <p>Botiquín de 85 piezas marca Motorlife para uso humano</p>
-            <h2>$11.000</h2>
-            <button>Añadir al carrito </button>
-        </div>
-
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr4.jpg') }}" alt="Categoría 4 ">
-            <h3>Cadena para pesebrera  </h3>
-            <p>Cadena de goma azul para pesebrera Roma</p>
-            <h2>$30.000</h2>
-            <button>Añadir al carrito </button>
-        </div>
-
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr5.jpg') }}" alt="Categoría 4 ">
-            <h3> Colgador pesebrera </h3>
-            <p>Colgador metálico multiuso pesebrera con mosquetón</p>
-            <h2>$9.000</h2>
-            <button>Añadir al carrito </button>
-        </div>
-    </section>
-
-
 
     <section id="categories" class="categories">
+        {% for producto in productos %}
         <div class="category">
-            <img src="{{ url_for('static', filename='img/corr6.jpg') }}" alt="Categoría  ">
-            <h3>Colgador </h3>
-            <p> Colgador porta balde metalico para pesebreras</p>
-            <h2>$1.800</h2>
+            <img src="{{ url_for('static', filename=producto.imagen) }}" alt="Categoría 4">
+            <h3>{{producto.nombre}}</h3>
+            <p> {{producto.descripcion}}</p>
+            <h2>${{ "{:,.0f}".format(producto.precio)}}</h2>
+            <form action="/shopping_cart/add/" method="post">
+                <input type="hidden" name="prod_id" value="{{producto.id}}">
+                <button class="btn2">añadir al carrito </button>
+            </form>
+        </div>
+    {% endfor %}
 
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr7.jpg') }}" alt="Categoría  ">
-            <h3>Comedero de plástico para valla </h3>
-            <p> </p>
-            <h2>$22.000</h2>
-        </div>
+</section>
 
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr8.jpg') }}" alt="Categoría  ">
-            <h3>Expositor para fustas</h3>
-            <p>Expositor para fustas 
-                Material: plástico
-                Medida: 30 cm</p>
-            <h2>$5.000</h2>
-        </div>
-        <div class="category">
-            <img src="{{ url_for('static', filename='img/corr9.jpg') }}" alt="Categoría  ">
-            <h3>Horqueta canastillo</h3>
-            <p>Horqueta cóncava con mango 
-                Material: plástico/madera
-                Largo: 130 cm 
-            </p>
-            <h2>$32.700</h2>
-        </div>
-        <div class="category">
-        <img src="{{ url_for('static', filename='img/corr10.jpg') }}" alt="Categoría  ">
-        <h3>Medida para alimento 1/4</h3>
-        <p>
-        </p>
-        <h2>$4.500</h2>
-    </div>
+
+        
 
     </section>
 </body>

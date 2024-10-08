@@ -14,7 +14,7 @@ class Usuario:
             (nombre, apellido, email, password)
              VALUES ('{nombre}', '{apellido}', '{email}', '{password}');
             """
-        result = connectToMySQL("sist_educativo").query_db(query)
+        result = connectToMySQL("farmacia_veterinaria").query_db(query)
         return result
 
     @classmethod

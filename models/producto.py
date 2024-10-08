@@ -1,3 +1,5 @@
+from config.db import connectToMySQL
+
 class Producto: 
     def __init__(self, data):
         self.id = data["id"]
@@ -7,8 +9,11 @@ class Producto:
         self.descripcion = data["descripcion"]
         self.id = data["id"]
 
-Productos = [
-    {'id': 1, 'nombre': 'Producto 1', 'precio': 10},
-    {'id': 2, 'nombre': 'Producto 2', 'precio': 15},
-    {'id': 3, 'nombre': 'Producto 3', 'precio': 20},
-]
+    @classmethod
+    def get_productos(cls, categoria_id):
+        query = f"SELECT * FROM producto WHERE categoria_id={categoria_id}"
+        results = connectToMySQL("farmacia_veterinaria").query_db(query)
+        productos = []
+        for producto in results:
+            productos.append(cls(producto))
+        return productos
