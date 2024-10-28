@@ -100,10 +100,15 @@ def register():
 @app.route('/carrito')
 def carrito():
     user_id = session["id"]
-    elments = Carrito.select_all(user_id)
-    print(elments[0].proucto_id)
+    elments = Carrito.select_all(user_id) 
     return render_template('carrito.html', carrito_elements=elments)
 
+
+@app.route("/shopping_cart/pay/", methods=["GET"])
+def pay():
+    user_id = session["id"]
+    Carrito.delete_cart(user_id)
+    return redirect("/")
 
 @app.route("/shopping_cart/delete", methods=["POST"])
 def delete_product():
